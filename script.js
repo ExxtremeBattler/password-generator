@@ -88,18 +88,76 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
+// Function to prompt user for password options (X)
 function getPasswordOptions() {
 
+  
+  let passwordLength = prompt("How many characters would you like your password to be? It must be at least 10, and no more than 64.")
+
+  let characterChoiceLower = prompt("Great! Now, would you like LOWER CASE characters in the password? Please type 'yes' or 'no' .")
+    
+    if(characterChoiceLower === "yes"){
+      characterChoiceLower = true
+    }
+
+    else if (characterChoiceLower === 'no'){
+      characterChoiceLower === false
+    }
+
+  let characterChoiceUpper = prompt("Great! Now, would you like UPPER CASE characters in the password? Please type 'yes' or 'no' .")
+    
+    if(characterChoiceUpper === "yes"){
+      characterChoiceUpper = true
+    }
+
+    else if (characterChoiceUpper === 'no'){
+      characterChoiceUpper = false
+    }
+
+
+    let characterChoiceNumeric = prompt("Great! Now, would you like NUMERIC characters in the password? Please type 'yes' or 'no' .")
+    
+    if(characterChoiceNumeric === "yes"){
+      characterChoiceNumeric = true
+    }
+
+    else if (characterChoiceNumeric === 'no'){
+      characterChoiceNumeric = false
+    }
+    
+    let characterChoiceSpecial = prompt("Great! Now, would you like SPECIAL characters in the password? Please type 'yes' or 'no' .")
+    
+    if(characterChoiceSpecial === "yes"){
+      characterChoiceSpecial = true
+    }
+
+    else if (characterChoiceSpecial === 'no'){
+      characterChoiceSpecial = false
+    }
+
+    if ( passwordLength >=10 && passwordLength <= 64 && typeof characterChoiceLower == "boolean" && typeof characterChoiceUpper == "boolean"
+    && typeof characterChoiceNumeric == "boolean" && typeof characterChoiceSpecial == "boolean"){
+    
+      return alert("Nice, we have everything we need!")
+    }
+
+    else{
+      alert("Something isn't quite right with the values we have. Please try generating a password again.")
+    }
+
+    
+
+  
 }
 
-// Function for getting a random element from an array
+// Function for getting a random element from an array (X)
 function getRandom(arr) {
-
+return arr[Math.floor(Math.random() * arr.length)]
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  
 
 }
 
