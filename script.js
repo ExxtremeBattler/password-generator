@@ -164,30 +164,34 @@ return arr[Math.floor(Math.random() * arr.length)]
 
 // Function to generate password with user input
 function generatePassword() {
-  var randomPassword = ""
-  var desiredArrays = []
+  let randomPassword = ""; 
+  let desiredArrays = [] ; 
 
   if (characterChoiceLower === true){
-    desiredArrays.concat(lowerCasedCharacters)
+    desiredArrays = desiredArrays.concat(lowerCasedCharacters)
   }
 
   if (characterChoiceNumeric === true){
-    desiredArrays.concat(numericCharacters)
+    desiredArrays = desiredArrays.concat(numericCharacters)
   }
 
   if (characterChoiceSpecial === true){
-    desiredArrays.concat(specialCharacters)
+    desiredArrays = desiredArrays.concat(specialCharacters)
   }
 
   if(characterChoiceUpper === true){
-    desiredArrays.concat(upperCasedCharacters)
+    desiredArrays = desiredArrays.concat(upperCasedCharacters)
   }
 
   for (let index = 0; index < passwordLength; index++) {
-    randomPassword.concat(getRandom(desiredArrays))
+    randomPassword = randomPassword.concat(getRandom(desiredArrays))
   }
 
-  return randomPassword
+  console.log(randomPassword);
+  console.log(desiredArrays)
+  
+
+  return randomPassword;
   
 
 }
@@ -204,4 +208,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword());
+generateBtn.addEventListener('click', writePassword);
