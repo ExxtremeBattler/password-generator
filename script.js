@@ -157,6 +157,30 @@ return arr[Math.floor(Math.random() * arr.length)]
 
 // Function to generate password with user input
 function generatePassword() {
+  var randomPassword = ""
+  var desiredArrays = []
+
+  if (characterChoiceLower === true){
+    desiredArrays.concat(lowerCasedCharacters)
+  }
+
+  if (characterChoiceNumeric === true){
+    desiredArrays.concat(numericCharacters)
+  }
+
+  if (characterChoiceSpecial === true){
+    desiredArrays.concat(specialCharacters)
+  }
+
+  if(characterChoiceUpper === true){
+    desiredArrays.concat(upperCasedCharacters)
+  }
+
+  for (let index = 0; index < passwordLength; index++) {
+    randomPassword.concat(getRandom(desiredArrays))
+  }
+
+  return randomPassword
   
 
 }
