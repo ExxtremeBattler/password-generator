@@ -101,43 +101,44 @@ function getPasswordOptions() {
   passwordLength = prompt("How many characters would you like your password to be? It must be at least 10, and no more than 64.")
 
   characterChoiceLower = prompt("Great! Now, would you like LOWER CASE characters in the password? Please type 'yes' or 'no' .")
+  
     
-    if(characterChoiceLower === "yes"){
+    if(characterChoiceLower.toLocaleLowerCase() === "yes" ){
       characterChoiceLower = true
     }
 
-    else if (characterChoiceLower === 'no'){
+    else if (characterChoiceLower.toLocaleLowerCase() === 'no'){
       characterChoiceLower = false
     }
 
   characterChoiceUpper = prompt("Great! Now, would you like UPPER CASE characters in the password? Please type 'yes' or 'no' .")
     
-    if(characterChoiceUpper === "yes"){
+    if(characterChoiceUpper.toLocaleLowerCase() === "yes"){
       characterChoiceUpper = true
     }
 
-    else if (characterChoiceUpper === 'no'){
+    else if (characterChoiceUpper.toLocaleLowerCase() === 'no'){
       characterChoiceUpper = false
     }
 
 
     characterChoiceNumeric = prompt("Great! Now, would you like NUMERIC characters in the password? Please type 'yes' or 'no' .")
     
-    if(characterChoiceNumeric === "yes"){
+    if(characterChoiceNumeric.toLocaleLowerCase() === "yes"){
       characterChoiceNumeric = true
     }
 
-    else if (characterChoiceNumeric === 'no'){
+    else if (characterChoiceNumeric.toLocaleLowerCase() === 'no'){
       characterChoiceNumeric = false
     }
     
     characterChoiceSpecial = prompt("Great! Now, would you like SPECIAL characters in the password? Please type 'yes' or 'no' .")
     
-    if(characterChoiceSpecial === "yes"){
+    if(characterChoiceSpecial.toLocaleLowerCase() === "yes"){
       characterChoiceSpecial = true
     }
 
-    else if (characterChoiceSpecial === 'no'){
+    else if (characterChoiceSpecial.toLocaleLowerCase() === 'no'){
       characterChoiceSpecial = false
     }
 
