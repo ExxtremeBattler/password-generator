@@ -88,23 +88,29 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+var characterChoiceLower;
+var characterChoiceUpper;
+var characterChoiceSpecial;
+var characterChoiceNumeric;
+var passwordLength;
+
 // Function to prompt user for password options (X)
 function getPasswordOptions() {
 
   
-  let passwordLength = prompt("How many characters would you like your password to be? It must be at least 10, and no more than 64.")
+  passwordLength = prompt("How many characters would you like your password to be? It must be at least 10, and no more than 64.")
 
-  let characterChoiceLower = prompt("Great! Now, would you like LOWER CASE characters in the password? Please type 'yes' or 'no' .")
+  characterChoiceLower = prompt("Great! Now, would you like LOWER CASE characters in the password? Please type 'yes' or 'no' .")
     
     if(characterChoiceLower === "yes"){
       characterChoiceLower = true
     }
 
     else if (characterChoiceLower === 'no'){
-      characterChoiceLower === false
+      characterChoiceLower = false
     }
 
-  let characterChoiceUpper = prompt("Great! Now, would you like UPPER CASE characters in the password? Please type 'yes' or 'no' .")
+  characterChoiceUpper = prompt("Great! Now, would you like UPPER CASE characters in the password? Please type 'yes' or 'no' .")
     
     if(characterChoiceUpper === "yes"){
       characterChoiceUpper = true
@@ -115,7 +121,7 @@ function getPasswordOptions() {
     }
 
 
-    let characterChoiceNumeric = prompt("Great! Now, would you like NUMERIC characters in the password? Please type 'yes' or 'no' .")
+    characterChoiceNumeric = prompt("Great! Now, would you like NUMERIC characters in the password? Please type 'yes' or 'no' .")
     
     if(characterChoiceNumeric === "yes"){
       characterChoiceNumeric = true
@@ -125,7 +131,7 @@ function getPasswordOptions() {
       characterChoiceNumeric = false
     }
     
-    let characterChoiceSpecial = prompt("Great! Now, would you like SPECIAL characters in the password? Please type 'yes' or 'no' .")
+    characterChoiceSpecial = prompt("Great! Now, would you like SPECIAL characters in the password? Please type 'yes' or 'no' .")
     
     if(characterChoiceSpecial === "yes"){
       characterChoiceSpecial = true
@@ -139,10 +145,11 @@ function getPasswordOptions() {
     && typeof characterChoiceNumeric == "boolean" && typeof characterChoiceSpecial == "boolean"){
     
       return alert("Nice, we have everything we need!")
-    }
-
-    else{
-      alert("Something isn't quite right with the values we have. Please try generating a password again.")
+    } 
+    
+     else {
+      alert("Make sure you have at least one character type selected, and the length is between 10 and 64." 
+      +" Please try generating a password again.")
     }
 
     
@@ -193,8 +200,8 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  passwordText.ariaPlaceholder = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', writePassword());
