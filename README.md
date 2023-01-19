@@ -17,7 +17,7 @@ desired password parameters.
 
 After having entered these properly, the page will now display your random password in the text field just above the button.
 
-
+![64518339814b6efe6e0cfc1edf11f1c3](https://user-images.githubusercontent.com/69109391/213429671-5dedcfd6-e047-48d0-91c1-0e7993d861e7.png)
 
 ## Credits
 
